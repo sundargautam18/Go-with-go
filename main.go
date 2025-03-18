@@ -1,16 +1,8 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/sundargautam18/Go-with-go/pkg/date"
-	"github.com/sundargautam18/Go-with-go/pkg/wifi"
-)
+import "github.com/sundargautam18/Go-with-go/routes"
 
 func main() {
-	fmt.Println("Hello World")
-	date := date.Now()
-	wifiInfo := wifi.Connect()
-	fmt.Println(wifiInfo)
-	fmt.Println(date)
+	r := routes.InitRoutes()
+	r.Run(":8080") // Start server
 }
